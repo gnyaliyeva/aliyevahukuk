@@ -1,33 +1,29 @@
+import React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
 
-const Header = ({ siteTitle }) => (
+const Header = ({ title, section1 }) => (
   <header
     style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
+      background: `#000`,
+      backgroundSize: 'contain'
     }}
   >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+
+    <div className="hero-wrap hero-wrap-2" data-stellar-background-ratio="0.5">
+      <div className="overlay"></div>
+      <div className="container">
+        <div className="row no-gutters slider-text align-items-end justify-content-center">
+          <div className="col-md-9 pb-5 text-center">
+            <h1 className="mb-3 bread">{title}</h1>
+            <p className="breadcrumbs">
+              <span className="mr-2"><Link to="/">Anasayfa <i className="ion-ios-arrow-forward"></i></Link></span> {section1 ? <span>{section1} <i className="ion-ios-arrow-forward"></i></span> : null} <span>{title} <i className="ion-ios-arrow-forward"></i></span>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
+
   </header>
 )
 
